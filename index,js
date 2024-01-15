@@ -1,0 +1,36 @@
+class Heroi {
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+    
+    atacar() {
+        let ataque;
+        
+        switch (this.tipo) {
+            case 'mago':
+                ataque = 'usou magia';
+                break;
+            case 'guerreiro':
+                ataque = 'usou espada';
+                break;
+            case 'monge':
+                ataque = 'usou artes marciais';
+                break;
+            case 'assassino':
+                ataque = 'usou lamina oculta';
+                break;
+            default:
+                ataque = 'usou um ataque indefinido';
+        }
+        
+        console.log(`O ${this.tipo} atacou usando ${ataque}`);
+    }
+}
+
+const assassino = new Heroi('Ezio', 40, 'assassino');
+const guerreiro = new Heroi('Arthur', 30, 'guerreiro');
+
+assassino.atacar();  // Saída: O assassino atacou usando lamina oculta
+guerreiro.atacar();  // Saída: O guerreiro atacou usando espada
